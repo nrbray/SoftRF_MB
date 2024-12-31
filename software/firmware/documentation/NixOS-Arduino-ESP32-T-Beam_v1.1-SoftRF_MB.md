@@ -19,9 +19,10 @@ arduino #  e.g. Arduino IDE verion 1.8.16
 ![alt text](image-1.png)  
 
 4. In Arduino-IDE, point to the file containing the sketch: ```SoftRF.ino``` 
-```File -> Open -> <.../software/firmware/source/SoftRF>``` Opens a new window.
+    - Arduino 1.8.19 -> File -> Open -> <.../software/firmware/source/SoftRF>  (Opens a new window.)
 5. Pick the boards manager icon on the left hand side, filter by "espressif", install version 2.0.3.
-6. Check the board is connected: ```Tools -> Get Board Info  [OK]``` and see T-Beam on /dev/ttyACM0 or similar at bottom right of window.
+6. Check the board is connected:
+    - Arduino 1.8.19 -> Tools -> Get Board Info  [OK]   (and see T-Beam on /dev/ttyACM0 or similar at bottom right of window.)
 7. ToDo: Set the board settings.. 
     - Arduino 1.8.19 -> Tools -> Board -> ESP32 Arduino -> ESP32 Dev Module 
     - Arduino 1.8.19 -> Tools -> CPU Frequency -> 160 MHz 
@@ -35,15 +36,14 @@ arduino #  e.g. Arduino IDE verion 1.8.16
     - Arduino IDE 2.3.3 -> Tools -> [Partition\_Scheme Flash\_Mode Flash\_Size] 
     - Arduino 1.8.19 -> Tools -> Upload Speed -> 921600  -->
 8. Compile the sketch (will take some time)
-```
-Sketch -> Verify/Compile
-```
+    - Arduino 1.8.19 -> Sketch -> Verify/Compile
 9. [Suggestion] Copy and paste the output for future comparison e.g.: ```>./software/firmware/source/SoftRF/compile_output.txt```
-10. Generate the binaries (will take some time)
-```
-Sketch -> Export Compiled Binary
-```
-11. [Suggestion] Get image info for future comparison:
+10. Upload to the connected device
+    - Arduino 1.8.19 -> Tools -> Programmer -> Esptool 
+    - Sketch -> Upload
+11. Generate the binaries (will take some time)
+    - Arduino 1.8.19 -> Sketch -> Export Compiled Binary
+12. [Suggestion] Get image info for future comparison:
 ```
 esptool.py image_info --version 2  ./software/firmware/source/SoftRF/build/esp32.esp32.esp32/SoftRF.ino.bin  >./software/firmware/source/SoftRF/esptool_image_info.txt
 ```
