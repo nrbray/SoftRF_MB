@@ -14,7 +14,7 @@ sudo chmod o+rw /dev/ttyACM0
 ```
 virtualenv venv
 source ./venv/bin/activate
-arduino #  e.g. Arduino IDE verion 1.8.16
+arduino #  e.g. Arduino IDE verion 1.8.19
 ```
 ![alt text](image-1.png)  
 
@@ -27,7 +27,8 @@ arduino #  e.g. Arduino IDE verion 1.8.16
     - Arduino 1.8.19 -> Tools -> Board -> ESP32 Arduino -> ESP32 Dev Module 
     - Arduino 1.8.19 -> Tools -> CPU Frequency -> 160 MHz 
     - Arduino 1.8.19 -> Tools -> Flash Mode -> DIO 
-    - Arduino 1.8.19 -> Tools -> [Partition\_Scheme Flash\_Mode Flash\_Size] -> Minimal SPIFFS
+    - Arduino 1.8.19 -> Tools -> Flash\_Size -> 4MB (32Mb)
+    - Arduino 1.8.19 -> Tools -> Partition\_Scheme -> Minimal SPIFFS...
     - Arduino 1.8.19 -> Tools -> PSRAM -> Enabled 
 
 ![alt text](image.png)  
@@ -45,5 +46,6 @@ arduino #  e.g. Arduino IDE verion 1.8.16
     - Arduino 1.8.19 -> Sketch -> Export Compiled Binary
 12. [Suggestion] Get image info for future comparison:
 ```
-esptool.py image_info --version 2  ./software/firmware/source/SoftRF/build/esp32.esp32.esp32/SoftRF.ino.bin  >./software/firmware/source/SoftRF/esptool_image_info.txt
+esptool.py image_info --version 2  ./software/firmware/source/SoftRF/build/esp32.esp32.esp32/SoftRF.ino.bin | strings >./software/firmware/source/SoftRF/esptool_image_info.txt
+esptool.py image_info --version 2  ./software/firmware/source/SoftRF/SoftRF.ino.esp32.bin | strings >./software/firmware/source/SoftRF/esptool_image_info.txt
 ```
