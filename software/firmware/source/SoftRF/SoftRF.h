@@ -93,7 +93,7 @@
  * for most of GNSS modules
  * being used in SoftRF project
  */
-#define SERIAL_IN_BR      9600
+#define 
 #endif
 #if !defined(SERIAL_IN_BITS)
 #define SERIAL_IN_BITS    SERIAL_8N1
